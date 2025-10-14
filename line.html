@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прямая - Справочник Математических Формул</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: #fff; padding: 1em 0; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color: #444; }
+        nav ul li a { display: block; padding: 0.8em 1.2em; color: #fff; text-decoration: none; border-right: 1px solid #555; }
+        nav ul li:last-child a { border-right: none; }
+        nav ul li a:hover { background-color: #555; }
+        main { padding: 2em; max-width: 900px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        footer { text-align: center; padding: 1em; background-color: #333; color: #fff; margin-top: 20px; }
+        h1, h2, h3 { color: #333; }
+        /* Стили для формул MathJax */
+        .MathJax_Display { overflow-x: auto; overflow-y: hidden; }
+        p { line-height: 1.6; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+    </style>
+    <!-- MathJax для рендеринга формул LaTeX -->
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // Для встроенных формул
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Для блочных формул
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Справочник Математических Формул</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="line.html">Прямая</a></li>
+            <li><a href="plane.html">Плоскость</a></li>
+            <li><a href="circle.html">Окружность</a></li>
+            <li><a href="vectors.html">Векторы</a></li>
+            <li><a href="matrices.html">Матрицы</a></li>
+            <li><a href="vector_spaces.html">Векторные пространства</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Прямая</h2>
+
+        <h3>Общее уравнение прямой</h3>
+        <p>Общее уравнение прямой на плоскости: $Ax + By + C = 0$</p>
+
+        <h3>Уравнение прямой с угловым коэффициентом</h3>
+        <p>Уравнение прямой с угловым коэффициентом $k$ и отрезком $b$ по оси $Oy$: $y = kx + b$</p>
+
+        <h3>Уравнение прямой в отрезках</h3>
+        <p>Уравнение прямой в отрезках, отсекаемых на осях $Ox$ и $Oy$: $\frac{x}{a} + \frac{y}{b} = 1$</p>
+
+        <h3>Каноническое уравнение прямой (через точку и направляющий вектор)</h3>
+        <p>Каноническое уравнение прямой, проходящей через точку $M_0(x_0, y_0)$ с направляющим вектором $\vec{s}(l, m)$: $\frac{x - x_0}{l} = \frac{y - y_0}{m}$</p>
+
+        <h3>Параметрическое уравнение прямой</h3>
+        <p>Параметрическое уравнение прямой:
+        $$
+        \begin{cases}
+            x = x_0 + lt \\
+            y = y_0 + mt
+        \end{cases}
+        $$
+        где $t$ — параметр.</p>
+
+        <h3>Угол между двумя прямыми</h3>
+        <p>Угол $\phi$ между двумя прямыми $y = k_1x + b_1$ и $y = k_2x + b_2$:
+        $$ \tan \phi = \left| \frac{k_2 - k_1}{1 + k_1k_2} \right| $$
+        Если прямые заданы общими уравнениями $A_1x + B_1y + C_1 = 0$ и $A_2x + B_2y + C_2 = 0$:
+        $$ \cos \phi = \frac{|A_1A_2 + B_1B_2|}{\sqrt{A_1^2 + B_1^2} \sqrt{A_2^2 + B_2^2}} $$</p>
+
+        <h3>Расстояние от точки до прямой</h3>
+        <p>Расстояние $d$ от точки $M_0(x_0, y_0)$ до прямой $Ax + By + C = 0$:
+        $$ d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}} $$</p>
+
+        <h3>Условия параллельности и перпендикулярности прямых</h3>
+        <p>Две прямые $y = k_1x + b_1$ и $y = k_2x + b_2$:</p>
+        <ul>
+            <li>Параллельны, если $k_1 = k_2$.</li>
+            <li>Перпендикулярны, если $k_1k_2 = -1$.</li>
+        </ul>
+        <p>Две прямые $A_1x + B_1y + C_1 = 0$ и $A_2x + B_2y + C_2 = 0$:</p>
+        <ul>
+            <li>Параллельны, если $\frac{A_1}{A_2} = \frac{B_1}{B_2}$.</li>
+            <li>Перпендикулярны, если $A_1A_2 + B_1B_2 = 0$.</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2023 Справочник Математических Формул</p>
+    </footer>
+</body>
+</html>
