@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Векторные пространства - Справочник Математических Формул</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: #fff; padding: 1em 0; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color: #444; }
+        nav ul li a { display: block; padding: 0.8em 1.2em; color: #fff; text-decoration: none; border-right: 1px solid #555; }
+        nav ul li:last-child a { border-right: none; }
+        nav ul li a:hover { background-color: #555; }
+        main { padding: 2em; max-width: 900px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        footer { text-align: center; padding: 1em; background-color: #333; color: #fff; margin-top: 20px; }
+        h1, h2, h3 { color: #333; }
+        /* Стили для формул MathJax */
+        .MathJax_Display { overflow-x: auto; overflow-y: hidden; }
+        p { line-height: 1.6; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        li { margin-bottom: 0.8em; }
+    </style>
+    <!-- MathJax для рендеринга формул LaTeX -->
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // Для встроенных формул
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Для блочных формул
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Справочник Математических Формул</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="line.html">Прямая</a></li>
+            <li><a href="plane.html">Плоскость</a></li>
+            <li><a href="circle.html">Окружность</a></li>
+            <li><a href="vectors.html">Векторы</a></li>
+            <li><a href="matrices.html">Матрицы</a></li>
+            <li><a href="vector_spaces.html">Векторные пространства</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Векторные пространства</h2>
+
+        <p>Векторное пространство $V$ над полем $F$ (например, $\mathbb{R}$ или $\mathbb{C}$) — это непустое множество, элементы которого называются векторами, с двумя операциями:</p>
+        <ul>
+            <li>**Сложение векторов:** для любых $\mathbf{u}, \mathbf{v} \in V$, $\mathbf{u} + \mathbf{v} \in V$.</li>
+            <li>**Умножение вектора на скаляр:** для любого $\mathbf{u} \in V$ и любого $c \in F$, $c\mathbf{u} \in V$.</li>
+        </ul>
+        <p>Эти операции должны удовлетворять следующим 10 аксиомам:</p>
+
+        <h3>Аксиомы сложения векторов:</h3>
+        <ol>
+            <li>**Коммутативность сложения:** $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$ для всех $\mathbf{u}, \mathbf{v} \in V$.</li>
+            <li>**Ассоциативность сложения:** $(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$ для всех $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$.</li>
+            <li>**Существование нулевого вектора:** Существует элемент $\mathbf{0} \in V$, называемый нулевым вектором, такой что $\mathbf{u} + \mathbf{0} = \mathbf{u}$ для всех $\mathbf{u} \in V$.</li>
+            <li>**Существование противоположного вектора:** Для каждого $\mathbf{u} \in V$ существует элемент $-\mathbf{u} \in V$, называемый противоположным вектором, такой что $\mathbf{u} + (-\mathbf{u}) = \mathbf{0}$.</li>
+        </ol>
+
+        <h3>Аксиомы умножения на скаляр:</h3>
+        <ol start="5">
+            <li>**Ассоциативность умножения на скаляр:** $c(d\mathbf{u}) = (cd)\mathbf{u}$ для всех скаляров $c, d \in F$ и всех $\mathbf{u} \in V$.</li>
+            <li>**Единичная скалярная единица:** $1\mathbf{u} = \mathbf{u}$ для всех $\mathbf{u} \in V$, где $1$ — единичный элемент поля $F$.</li>
+        </ol>
+
+        <h3>Аксиомы дистрибутивности:</h3>
+        <ol start="7">
+            <li>**Дистрибутивность скаляра по отношению к сложению векторов:** $c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$ для всех скаляров $c \in F$ и всех $\mathbf{u}, \mathbf{v} \in V$.</li>
+            <li>**Дистрибутивность вектора по отношению к сложению скаляров:** $(c + d)\mathbf{u} = c\mathbf{u} + d\mathbf{u}$ для всех скаляров $c, d \in F$ и всех $\mathbf{u} \in V$.</li>
+        </ol>
+        
+        <h3>Дополнительные аксиомы (часто включаются в определение поля):</h3>
+        <p>Хотя эти аксиомы относятся к свойствам поля скаляров $F$, они подразумеваются при работе с векторными пространствами:</p>
+        <ol start="9">
+            <li>**Замкнутость сложения:** Если $c, d \in F$, то $c+d \in F$.</li>
+            <li>**Замкнутость умножения:** Если $c, d \in F$, то $cd \in F$.</li>
+        </ol>
+        <p>Любое множество, удовлетворяющее этим аксиомам, является векторным пространством.</p>
+    </main>
+    <footer>
+        <p>&copy; 2023 Справочник Математических Формул</p>
+    </footer>
+</body>
+</html>
