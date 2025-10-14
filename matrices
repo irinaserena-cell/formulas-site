@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Матрицы - Справочник Математических Формул</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: #fff; padding: 1em 0; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color: #444; }
+        nav ul li a { display: block; padding: 0.8em 1.2em; color: #fff; text-decoration: none; border-right: 1px solid #555; }
+        nav ul li:last-child a { border-right: none; }
+        nav ul li a:hover { background-color: #555; }
+        main { padding: 2em; max-width: 900px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        footer { text-align: center; padding: 1em; background-color: #333; color: #fff; margin-top: 20px; }
+        h1, h2, h3 { color: #333; }
+        /* Стили для формул MathJax */
+        .MathJax_Display { overflow-x: auto; overflow-y: hidden; }
+        p { line-height: 1.6; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+    </style>
+    <!-- MathJax для рендеринга формул LaTeX -->
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // Для встроенных формул
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Для блочных формул
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Справочник Математических Формул</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="line.html">Прямая</a></li>
+            <li><a href="plane.html">Плоскость</a></li>
+            <li><a href="circle.html">Окружность</a></li>
+            <li><a href="vectors.html">Векторы</a></li>
+            <li><a href="matrices.html">Матрицы</a></li>
+            <li><a href="vector_spaces.html">Векторные пространства</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Матрицы</h2>
+
+        <p>Матрица $A$ размера $m \times n$ имеет вид:
+        $$ A = \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix} $$</p>
+
+        <h3>Сложение матриц</h3>
+        <p>Для сложения матрицы должны быть одинакового размера. Если $A = (a_{ij})$ и $B = (b_{ij})$, то $C = A + B = (c_{ij})$, где $c_{ij} = a_{ij} + b_{ij}$.</p>
+        $$
+        \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}
+        +
+        \begin{pmatrix}
+            e & f \\
+            g & h
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            a+e & b+f \\
+            c+g & d+h
+        \end{pmatrix}
+        $$
+        **Свойства сложения:**
+        <ul>
+            <li>Коммутативность: $A + B = B + A$</li>
+            <li>Ассоциативность: $(A + B) + C = A + (B + C)$</li>
+            <li>Существование нулевой матрицы $0$: $A + 0 = A$</li>
+            <li>Существование противоположной матрицы $-A$: $A + (-A) = 0$</li>
+        </ul>
+
+        <h3>Умножение матрицы на скаляр</h3>
+        <p>Если $A = (a_{ij})$ и $k$ — скаляр, то $kA = (ka_{ij})$.</p>
+        $$
+        k \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            ka & kb \\
+            kc & kd
+        \end{pmatrix}
+        $$
+
+        <h3>Умножение матриц</h3>
+        <p>Для умножения $A \cdot B$ количество столбцов матрицы $A$ должно быть равно количеству строк матрицы $B$. Если $A$ имеет размер $m \times n$ и $B$ имеет размер $n \times p$, то $C = A \cdot B$ будет иметь размер $m \times p$. Элемент $c_{ij}$ вычисляется как:
+        $$ c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj} $$</p>
+        $$
+        \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}
+        \begin{pmatrix}
+            e & f \\
+            g & h
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            ae+bg & af+bh \\
+            ce+dg & cf+dh
+        \end{pmatrix}
+        $$
+        **Свойства умножения:**
+        <ul>
+            <li>Ассоциативность: $(AB)C = A(BC)$</li>
+            <li>Дистрибутивность: $A(B+C) = AB + AC$ и $(A+B)C = AC + BC$</li>
+            <li>В общем случае некоммутативно: $AB \neq BA$</li>
+        </ul>
+
+        <h3>Транспонирование матрицы</h3>
+        <p>Транспонированная матрица $A^T$ получается из матрицы $A$ заменой строк на столбцы (или столбцов на строки). Если $A = (a_{ij})$, то $A^T = (a_{ji})$.</p>
+        $$
+        A = \begin{pmatrix}
+            a & b \\
+            c & d \\
+            e & f
+        \end{pmatrix}
+        \implies
+        A^T = \begin{pmatrix}
+            a & c & e \\
+            b & d & f
+        \end{pmatrix}
+        $$
+        **Свойства транспонирования:**
+        <ul>
+            <li>$(A^T)^T = A$</li>
+            <li>$(A + B)^T = A^T + B^T$</li>
+            <li>$(kA)^T = kA^T$</li>
+            <li>$(AB)^T = B^T A^T$</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2023 Справочник Математических Формул</p>
+    </footer>
+</body>
+</html>
