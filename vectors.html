@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Векторы - Справочник Математических Формул</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: #fff; padding: 1em 0; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color: #444; }
+        nav ul li a { display: block; padding: 0.8em 1.2em; color: #fff; text-decoration: none; border-right: 1px solid #555; }
+        nav ul li:last-child a { border-right: none; }
+        nav ul li a:hover { background-color: #555; }
+        main { padding: 2em; max-width: 900px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        footer { text-align: center; padding: 1em; background-color: #333; color: #fff; margin-top: 20px; }
+        h1, h2, h3 { color: #333; }
+        /* Стили для формул MathJax */
+        .MathJax_Display { overflow-x: auto; overflow-y: hidden; }
+        p { line-height: 1.6; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+    </style>
+    <!-- MathJax для рендеринга формул LaTeX -->
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // Для встроенных формул
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Для блочных формул
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Справочник Математических Формул</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="line.html">Прямая</a></li>
+            <li><a href="plane.html">Плоскость</a></li>
+            <li><a href="circle.html">Окружность</a></li>
+            <li><a href="vectors.html">Векторы</a></li>
+            <li><a href="matrices.html">Матрицы</a></li>
+            <li><a href="vector_spaces.html">Векторные пространства</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Векторы</h2>
+
+        <p>Пусть даны векторы $\vec{a} = (a_x, a_y, a_z)$ и $\vec{b} = (b_x, b_y, b_z)$.</p>
+
+        <h3>Длина (модуль) вектора</h3>
+        <p>Длина вектора $\vec{a}$:
+        $$ |\vec{a}| = \sqrt{a_x^2 + a_y^2 + a_z^2} $$</p>
+
+        <h3>Сложение векторов</h3>
+        <p>Сумма векторов:
+        $$ \vec{a} + \vec{b} = (a_x + b_x, a_y + b_y, a_z + b_z) $$</p>
+
+        <h3>Умножение вектора на скаляр</h3>
+        <p>Произведение вектора $\vec{a}$ на скаляр $k$:
+        $$ k\vec{a} = (ka_x, ka_y, ka_z) $$</p>
+
+        <h3>Скалярное произведение векторов</h3>
+        <p>Скалярное произведение векторов $\vec{a}$ и $\vec{b}$:
+        $$ \vec{a} \cdot \vec{b} = a_x b_x + a_y b_y + a_z b_z $$
+        Также:
+        $$ \vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos \phi $$
+        где $\phi$ — угол между векторами.</p>
+
+        <h3>Угол между векторами</h3>
+        <p>Угол $\phi$ между векторами $\vec{a}$ и $\vec{b}$:
+        $$ \cos \phi = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|} = \frac{a_x b_x + a_y b_y + a_z b_z}{\sqrt{a_x^2 + a_y^2 + a_z^2} \sqrt{b_x^2 + b_y^2 + b_z^2}} $$</p>
+
+        <h3>Векторное произведение векторов</h3>
+        <p>Векторное произведение векторов $\vec{a}$ и $\vec{b}$ (для трехмерного пространства):
+        $$ \vec{a} \times \vec{b} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ a_x & a_y & a_z \\ b_x & b_y & b_z \end{vmatrix} = (a_y b_z - a_z b_y)\mathbf{i} - (a_x b_z - a_z b_x)\mathbf{j} + (a_x b_y - a_y b_x)\mathbf{k} $$
+        Модуль векторного произведения равен площади параллелограмма, построенного на векторах $\vec{a}$ и $\vec{b}$:
+        $$ |\vec{a} \times \vec{b}| = |\vec{a}| |\vec{b}| \sin \phi $$</p>
+
+        <h3>Условия параллельности и перпендикулярности векторов</h3>
+        <ul>
+            <li>**Параллельность:** Векторы $\vec{a}$ и $\vec{b}$ параллельны (коллинеарны), если существует скаляр $k$ такой, что $\vec{a} = k\vec{b}$, или если их координаты пропорциональны:
+                $$ \frac{a_x}{b_x} = \frac{a_y}{b_y} = \frac{a_z}{b_z} $$
+                Также, если их векторное произведение равно нулевому вектору: $\vec{a} \times \vec{b} = \vec{0}$.
+            </li>
+            <li>**Перпендикулярность:** Векторы $\vec{a}$ и $\vec{b}$ перпендикулярны (ортогональны), если их скалярное произведение равно нулю:
+                $$ \vec{a} \cdot \vec{b} = 0 \implies a_x b_x + a_y b_y + a_z b_z = 0 $$
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2023 Справочник Математических Формул</p>
+    </footer>
+</body>
+</html>
